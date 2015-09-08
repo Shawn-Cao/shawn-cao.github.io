@@ -1,1 +1,19 @@
-<p>This is the partial for view 1.</p>
+<h1>Welcome to our event bulletin</h1>
+<div>
+    <h2>Register New Event</h2>
+    <form nonvalidate>
+        <label>Title: <input type="text" ng-model="data.newEvent.title" /></label><br />
+        <label>Details: <input type="text" ng-model="data.newEvent.details" /></label><br />
+        <label>Address: <input type="text" ng-model="data.newEvent.address" /></label><br />
+        <label>Time: <input type="datetime" ng-model="data.newEvent.time" /></label><br />
+        <input type="submit" ng-click="registerEvent(data.newEvent)" /><br />
+    </form>
+</div>
+<ul>
+    <li ng-repeat="event in data.events">
+        <h2>{{event.title}}</h2>
+        <p>Details: {{event.details}}</p>
+        <p>Address: {{event.address}}</p>
+        <p>Time: {{event.time}}</p>
+    </li>
+</ul>
