@@ -1,3 +1,7 @@
 'use strict';
-angular.module('myApp.services.event', [])
-    .constant('remote', 'http://web-seminar.herokuapp.com/');
+angular.module('myApp.services.event', ['myApp.service.remote'])
+    .factory('eventService', function(remoteService) {
+        return {
+
+        }
+    });

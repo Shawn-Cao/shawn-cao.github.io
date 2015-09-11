@@ -1,28 +1,33 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.view1', ['ngRoute', 'myApp.service.remote'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
-  });
-}])
+    .config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/view1', {
+            templateUrl: 'view1/view1.html',
+            controller: 'View1Ctrl',
+            controllerAs: 'registration'
+        });
+    }])
 
-.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
-      $scope.data = {
-        newEvent: {}
-      };
-      $http.get('http://localhost:8086/event')//TODO: move this to services
-          .success(function(data) {
-            debugger;
-            $scope.data.events = data;
-          });
-      $scope.registerEvent = function(data) {
-        $http.post('http://localhost:8086/event', JSON.stringify(data))
-            .success(function(data) {
-              debugger;
-              $scope.data.events.add(data);
-            })
-      }
-}]);
+    .controller('View1Ctrl', function($http, remoteService) {
+        this.newEvent = {};
+        var _this = this;
+        remoteService.getAllEvents().then(function (data) {
+            if (data && data.length >= 0) {
+                _this.events = data;
+            } else {
+                _this.events = [data];
+            }
+        });
+        this.registerEvent = function(data) {
+            $http.post('http://localhost:8086/event', JSON.stringify(data))
+                .then(function(response) {
+                    debugger;
+                    _this.events.add(response.data);
+                }, function(data) {
+                    debugger;
+                    _this.events.add(response.data);
+                })
+        }
+    });
