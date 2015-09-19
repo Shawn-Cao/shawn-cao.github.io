@@ -14,12 +14,14 @@ angular.module('myApp.service.remote', [])
     .factory('remoteService', function($http, endpoints, operations) {
 
         function getAllEvents() {  //public functions
-            debugger;
-            return $http.post(endpoints.localHost + operations.event)
+            return $http.get(endpoints.backend + operations.event)
                 .then(function(response) {
                     debugger;
                     return response.data;
-                }, null);
+                }, function(error) {
+                    debugger;
+                    return error;
+                });
         }
 
         return {

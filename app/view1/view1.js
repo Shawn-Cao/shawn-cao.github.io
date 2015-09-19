@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute', 'myApp.service.remote'])
+angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/view1', {
@@ -10,24 +10,38 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.remote'])
         });
     }])
 
-    .controller('View1Ctrl', function($http, remoteService) {
-        this.newEvent = {};
+    .controller('View1Ctrl', function($http, $scope, eventService) {
         var _this = this;
-        remoteService.getAllEvents().then(function (data) {
-            if (data && data.length >= 0) {
-                _this.events = data;
-            } else {
-                _this.events = [data];
-            }
+        this.events = [];
+        this.newEvent = {
+            time: new Date()
+        };
+        this.newEventTimePicker = {
+            dateOptions: {
+                formatYear: 'yy',
+                startingDay: 1
+            },
+            opened: false
+        };
+        eventService.showAllEvents().then( function (events) {
+            _this.events = events;
         });
+        this.accordion = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        this.filterEvents = {};
+        //$scope.$watch(this.events);
+
         this.registerEvent = function(data) {
+            debugger;
             $http.post('http://localhost:8086/event', JSON.stringify(data))
                 .then(function(response) {
                     debugger;
-                    _this.events.add(response.data);
+                    _this.events.push(response.data);
                 }, function(data) {
                     debugger;
-                    _this.events.add(response.data);
+                    _this.events.push(response.data);
                 })
         }
     });
