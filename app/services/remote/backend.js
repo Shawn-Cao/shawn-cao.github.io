@@ -3,8 +3,8 @@
 angular.module('myApp.service.remote', [])
 
     .constant('endpoints', {
-        backend: 'http://web-seminar.herokuapp.com',
-        localHost: 'http://localhost:8086'
+        backend: 'http://web-seminar.herokuapp.com',  //backend from Gary
+        localHost: 'http://localhost:8086'  //SOAP UI mock
     })
     .constant('operations', {
         event: '/event',
@@ -12,20 +12,24 @@ angular.module('myApp.service.remote', [])
     })
 
     .factory('remoteService', function($http, endpoints, operations) {
-        var endpoint_event = endpoints.backend + operations.event;  //private member to hold URL
+        var endpoint_event = endpoints.backend + operations.event;  //private member to hold URLs
+        var endpoint_attendee = endpoints.backend + operations.attendee;
 
         function getAllEvents() {
             return $http.get(endpoint_event)
                 .then(function(response) {
-                    debugger;
                     return response.data;
                 }, function(error) {
                     debugger;
-                    return error;
                 });
         }
-        function registerNew(newEvent) {
+        function registerNewEvent(newEvent) {
             return $http.post(endpoint_event, JSON.stringify(newEvent))
+                .then(function(response) {
+                    return response.data;
+                }, function(error) {
+                    debugger;
+                });
         }
 
         return {

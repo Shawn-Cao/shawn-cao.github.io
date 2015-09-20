@@ -7,12 +7,14 @@
     <accordion close-others="oneAtATime">
         <accordion-group ng-repeat="event in registration.events | filter:filterEvents | orderBy:'-time' track by event.id" is-open="accordion.open">
             <accordion-heading>
-                {{event.title}}
+                {{event.title}} on {{event.time | date }}
                 <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordion.open, 'glyphicon-chevron-right': !accordion.open}"></i>
             </accordion-heading>
-            <p>Time: {{event.time | date }} <button ng-click="" class="btn btn-default btn-sm pull-right">Register!</button></p>
+            <p>Time: {{event.time}} <button ng-click="" class="btn btn-default btn-sm pull-right">Register!</button></p>
             <p>Details: {{event.details}}</p>
             <p>Address: {{event.address}}</p>
+            <p>Attendees: <span ng-repeat="attendee in event.attendees">{{attendee.name}}</span>
+            </p>
         </accordion-group>
     </accordion>
     <div>
@@ -22,7 +24,7 @@
             <label>Details: <input type="text" ng-model="registration.newEvent.details" /></label><br />
             <label>Address: <input type="text" ng-model="registration.newEvent.address" /></label><br />
             <label>Time: <input type="datetime-local" ng-model="registration.newEvent.time" /></label><br />
-            <input type="submit" ng-click="registration.registerEvent(newEvent)" /><br />
+            <input type="submit" ng-click="registration.registerEvent()" /><br />
         </form>
     </div>
 </div>

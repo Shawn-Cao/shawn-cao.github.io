@@ -33,15 +33,13 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
         this.filterEvents = {};
         //$scope.$watch(this.events);
 
-        this.registerEvent = function(newEvent) {
-            debugger;
-            eventService.registerNew(newEvent)
-                .then(function(response) {
+        this.registerEvent = function() {
+            eventService.registerNew(this.newEvent)
+                .then(function(createdEvent) {
                     debugger;
-                    _this.events.push(response.data);
-                }, function(data) {
+                    _this.events.push(createdEvent);
+                }, function(error) {
                     debugger;
-                    _this.events.push(response.data);
                 })
         }
     });
