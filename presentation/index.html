@@ -10,10 +10,36 @@
 <body>
 <div class="container">
     <h1>Angular Demo</h1>
-    <a href="/app/index.html">application link</a>
+    <a href="../app/index.html">application link</a>
 
-    <h2>Promoses:</h2>
-    <img src="img/promises.png" alt="ECAScript6 promises">
+    <h2>Angular concepts</h2>
+    <h3>Declarative vs. Imperative</h3>
+    <div class="row">
+        <pre class="col-md-5">
+            &lt;input ng-model="data.model"&gt;
+            Display: {{data.model}}
+        </pre>
+        <div class="col-md-1">vs.</div>
+        <pre class="col-md-6">
+            &lt;input id="model"&gt;
+            Display: &lt;span id="display"&gt;&lt;/span&gt;<br />
+            jquery: $( "#model" ).change(function(event) {
+            &nbsp; &nbsp; $("#display").text($(this).val());
+            });
+        </pre>
+    </div>
+    <h3>Data Binding</h3>
+    <figure>
+        <img src="img/Two_Way_Data_Binding.png" alt="Two way data binding">
+        <figcaption><a href="https://docs.angularjs.org/guide/databinding">Data Binding in Angular Templates</a></figcaption>
+    </figure>
+
+    <h3>Promoses</h3>
+    <figure>
+        <img src="img/promises.png" alt="ECMAScript6 promises">
+        <figcaption><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">JavaScript (ES6) Promise API</a></figcaption>
+    </figure>
+
 </div>
 </body>
 </html>
