@@ -58,7 +58,7 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
                     }
                     _this.events.find(function(event) {
                         return event.id == addedAttendee.event;
-                    }).attendees.unshift(addedAttendee)
+                    }).attendees.push(addedAttendee)
                 })
         };
         this.showUp = function(attendeeId, eventId) {
