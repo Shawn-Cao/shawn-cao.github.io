@@ -55,7 +55,7 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
                     debugger;
                     _this.events.find(function(event) {
                         return event.id == addedAttendee.event;
-                    }).attendees.add(addedAttendee)
+                    }).attendees.push(addedAttendee)
                 })
         }
     });
