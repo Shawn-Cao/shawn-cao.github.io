@@ -40,9 +40,11 @@ angular.module('myApp.service.remote', [])
                 })
         }
 
-        return {
+        var publicApi = {
             getAllEvents: getAllEvents,
             registerNewEvent: registerNewEvent,
             createNewAttendee: createNewAttendee
-        }
+        };
+
+        return publicApi;
     });
