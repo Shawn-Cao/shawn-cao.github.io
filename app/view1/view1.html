@@ -5,15 +5,20 @@
         <input type="search" ng-model="filterEvents.title" placeholder="search by title..." aria-label="filter events" />
     </p>
     <accordion close-others="oneAtATime">
-        <accordion-group ng-repeat="event in registration.events | filter:filterEvents | orderBy:'-time' track by event.id" is-open="accordion.open">
+        <accordion-group ng-repeat="(eventId, event) in registration.events | filter:filterEvents | orderBy:'-time' track by event.id" is-open="accordion.open">
             <accordion-heading>
                 {{event.title}} on {{event.time | date }}
                 <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordion.open, 'glyphicon-chevron-right': !accordion.open}"></i>
             </accordion-heading>
-            <p>Time: {{event.time}} <button ng-click="" class="btn btn-default btn-sm pull-right">Register!</button></p>
+            <p>
+                Time: {{event.time}}
+                <button ng-click="registration.join(event.id)" class="btn btn-default btn-sm pull-right">I'm in!</button>
+            </p>
             <p>Details: {{event.details}}</p>
             <p>Address: {{event.address}}</p>
-            <p>Attendees: <span ng-repeat="attendee in event.attendees">{{attendee.name}}</span>
+            <p>
+                Attendees:
+                <span ng-repeat="attendee in event.attendees">{{attendee.name}}</span>
             </p>
         </accordion-group>
     </accordion>

@@ -12,7 +12,8 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
 
     .controller('View1Ctrl', function($http, $scope, eventService) {
         var _this = this;
-        this.events = [];
+        this.events = {};  //Map with key=eventId
+        this.userName = 'Shawn';
         this.newEvent = {
             time: new Date()
         };
@@ -24,6 +25,7 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
             opened: false
         };
         eventService.showAllEvents().then( function (events) {
+            debugger;
             _this.events = events;
         });
         this.accordion = {
@@ -41,5 +43,12 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
                 }, function(error) {
                     debugger;
                 })
+        };
+        this.join = function(eventId) {
+            var newAttendee = {
+                name: _this.userName,
+                event: eventId
+            };
+            eventService.addAttendee(newAttendee); //refresh: TODO convert event array into map
         }
     });

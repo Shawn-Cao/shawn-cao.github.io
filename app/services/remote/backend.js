@@ -31,6 +31,14 @@ angular.module('myApp.service.remote', [])
                     debugger;
                 });
         }
+        function createNewAttendee(newAttendee) {
+            return $http.post(endpoint_attendee, JSON.stringify(newAttendee))
+                .then(function(response) {
+                    return response.data;
+                }, function(error) {
+                    debugger;
+                })
+        }
 
         return {
             getAllEvents: getAllEvents,
