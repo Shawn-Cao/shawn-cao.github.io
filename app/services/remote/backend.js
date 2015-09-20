@@ -42,6 +42,7 @@ angular.module('myApp.service.remote', [])
 
         return {
             getAllEvents: getAllEvents,
-            registerNew: registerNew
+            registerNewEvent: registerNewEvent,
+            createNewAttendee: createNewAttendee
         }
     });
