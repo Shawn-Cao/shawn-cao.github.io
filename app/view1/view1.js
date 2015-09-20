@@ -33,9 +33,9 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
         this.filterEvents = {};
         //$scope.$watch(this.events);
 
-        this.registerEvent = function(data) {
+        this.registerEvent = function(newEvent) {
             debugger;
-            $http.post('http://localhost:8086/event', JSON.stringify(data))
+            eventService.registerNew(newEvent)
                 .then(function(response) {
                     debugger;
                     _this.events.push(response.data);

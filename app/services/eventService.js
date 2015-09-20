@@ -15,6 +15,9 @@ angular.module('myApp.service.event', ['myApp.service.remote'])
                     debugger;
                     return error;
                 });
+            },
+            registerNew: function registerNew(newEvent) {
+                return remoteService.registerNew(newEvent)
             }
 
         }
