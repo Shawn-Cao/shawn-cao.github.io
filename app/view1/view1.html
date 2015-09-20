@@ -18,7 +18,14 @@
             <p>Address: {{event.address}}</p>
             <p>
                 Attendees:
-                <span ng-repeat="attendee in event.attendees">{{attendee.name}}</span>
+                <span ng-repeat="attendee in event.attendees">
+                    {{attendee.name}}
+                    <span ng-switch on="attendee.showedUp">
+                        <span ng-switch-when="true">showed up</span>
+                        <span ng-switch-when="false">missed</span>
+                        <span ng-switch-default><button ng-click="registration.showUp(attendee.id, event.id)">showing up</button></span>
+                    </span>
+                </span>
             </p>
         </accordion-group>
     </accordion>

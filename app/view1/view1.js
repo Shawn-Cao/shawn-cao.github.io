@@ -44,18 +44,24 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
         };
         this.joinEvent = function(eventId) {
             if (this.userName == '') {
-                this.userName == prompt("Please enter your name", "John Doe");
+                this.userName = prompt("Please enter your name", "John Doe");
             }
             var newAttendee = {
-                name: _this.userName,
+                name: this.userName,
                 event: eventId
             };
             eventService.addAttendee(newAttendee)
                 .then(function(addedAttendee) {
                     debugger;
+                    if (!addedAttendee.event) {
+                        return null;
+                    }
                     _this.events.find(function(event) {
                         return event.id == addedAttendee.event;
-                    }).attendees.push(addedAttendee)
+                    }).attendees.unshift(addedAttendee)
                 })
+        };
+        this.showUp = function(attendeeId, eventId) {
+            debugger;
         }
     });
