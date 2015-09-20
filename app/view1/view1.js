@@ -36,7 +36,7 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
         //$scope.$watch(this.events);
 
         this.registerEvent = function() {
-            eventService.registerNew(this.newEvent)
+            eventService.registerNewEvent(this.newEvent)
                 .then(function(createdEvent) {
                     debugger;
                     _this.events.push(createdEvent);

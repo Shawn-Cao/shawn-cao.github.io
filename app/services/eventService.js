@@ -19,8 +19,8 @@ angular.module('myApp.service.event', ['myApp.service.remote'])
                     return error;
                 });
             },
-            registerNew: function registerNewEvent(newEvent) {
-                return remoteService.registerNew(newEvent)
+            registerNewEvent: function registerNewEvent(newEvent) {
+                return remoteService.registerNewEvent(newEvent)
             },
             addAttendee: function addAttendee(newAttendee) {
                 return remoteService.createNewAttendee(newAttendee)
