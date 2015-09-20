@@ -10,10 +10,14 @@ angular.module('myApp.service.event', ['myApp.service.remote'])
                     data.forEach(function (element) {
                         element.time = new Date(element.time);
                     });
-                    return data.reduce(function (events, entry) {  //convert to Map with event.id as key
+                    return data;
+                    /* maybe convert to Map with event.id as key?
+                    var events = data.reduce(function (events, entry) {
                         events[entry.id] = entry.val;
                         return events;
-                    })
+                    });
+                    debugger;
+                    return events;*/
                 }, function (error) {
                     debugger;
                     return error;

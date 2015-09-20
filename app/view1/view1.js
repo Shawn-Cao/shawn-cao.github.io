@@ -49,6 +49,12 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
                 name: _this.userName,
                 event: eventId
             };
-            eventService.addAttendee(newAttendee); //refresh: TODO convert event array into map
+            eventService.addAttendee(newAttendee)
+                .then(function(addedAttendee) {
+                    debugger;
+                    _this.events.find(function(event) {
+                        return event.id == addedAttendee.event;
+                    }).attendees.add(addedAttendee)
+                })
         }
     });
