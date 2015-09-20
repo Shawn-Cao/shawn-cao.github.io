@@ -12,8 +12,8 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
 
     .controller('View1Ctrl', function($http, $scope, eventService) {
         var _this = this;
-        this.events = {};  //Map with key=eventId
-        this.userName = 'Shawn';
+        this.events = [];
+        this.userName = '';
         this.newEvent = {
             time: new Date()
         };
@@ -40,11 +40,12 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
                 .then(function(createdEvent) {
                     debugger;
                     _this.events.push(createdEvent);
-                }, function(error) {
-                    debugger;
                 })
         };
-        this.join = function(eventId) {
+        this.joinEvent = function(eventId) {
+            if (this.userName == '') {
+                this.userName == prompt("Please enter your name", "John Doe");
+            }
             var newAttendee = {
                 name: _this.userName,
                 event: eventId

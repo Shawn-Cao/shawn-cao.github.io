@@ -4,20 +4,11 @@ angular.module('myApp.service.event', ['myApp.service.remote'])
         return {
             showAllEvents: function showAllEvents() {
                 return remoteService.getAllEvents().then(function (data) {
-                    if (!Array.isArray(data)) {
-                        data = [data];
-                    }
-                    data.forEach(function (element) {
+                    var events = Array.isArray(data) ? data : [data];
+                    events.forEach(function (element) {
                         element.time = new Date(element.time);
                     });
-                    return data;
-                    /* maybe convert to Map with event.id as key?
-                    var events = data.reduce(function (events, entry) {
-                        events[entry.id] = entry.val;
-                        return events;
-                    });
-                    debugger;
-                    return events;*/
+                    return events;
                 }, function (error) {
                     debugger;
                     return error;

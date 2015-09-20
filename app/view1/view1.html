@@ -12,7 +12,7 @@
             </accordion-heading>
             <p>
                 Time: {{event.time}}
-                <button ng-click="registration.join(event.id)" class="btn btn-default btn-sm pull-right">I'm in!</button>
+                <button ng-click="registration.joinEvent(event.id)" class="btn btn-default btn-sm pull-right">I'm in!</button>
             </p>
             <p>Details: {{event.details}}</p>
             <p>Address: {{event.address}}</p>
@@ -22,6 +22,7 @@
             </p>
         </accordion-group>
     </accordion>
+
     <div>
         <p><strong>Propose A New Event</strong></p>
         <form nonvalidate>
