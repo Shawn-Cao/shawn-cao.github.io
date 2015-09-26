@@ -78,20 +78,28 @@
     <div class="row">
         <div class="col-md-5">
             <iframe src="iframe-angular.html" width="100%" height="60px"></iframe>
-            <pre>&lt;input ng-model="model"&gt;<br />Display: {{model}}</pre>
+            <pre>&lt;input ng-model="model"&gt;<br/>Display: {{model}}</pre>
         </div>
         <div class="col-md-1">vs.</div>
         <div class="col-md-6">
-            <div style="border:1px solid grey; height: 60px; padding: 10px;">Input <input id="model">Display: <span id="display"></span></div>
-            <pre>&lt;input id="model"&gt;<br />Display: &lt;span id="display"&gt;&lt;/span&gt;<br/>jquery code: $( "#model" ).keyup(function(event) {<br />&nbsp; &nbsp; $("#display").text($(this).val());<br/>});</pre>
+            <div style="border:1px solid grey; height: 60px; padding: 10px;">Input <input id="model">Display: <span
+                    id="display"></span></div>
+            <pre>&lt;input id="model"&gt;<br/>Display: &lt;span id="display"&gt;&lt;/span&gt;<br/>jquery code: $( "#model" ).keyup(function(event) {<br/>&nbsp; &nbsp; $("#display").text($(this).val());<br/>});</pre>
         </div>
     </div>
     <h3>Data Binding</h3>
-    <figure>
-        <img src="img/Two_Way_Data_Binding.png" alt="Two way data binding">
-        <figcaption><a href="https://docs.angularjs.org/guide/databinding">Data Binding in Angular Templates</a>
-        </figcaption>
-    </figure>
+
+    <div class="row">
+        <figure class="col-md-5">
+            <img src="img/Two_Way_Data_Binding.png" alt="Two way data binding">
+            <figcaption><a href="https://docs.angularjs.org/guide/databinding" target="_blank">Data Binding in Angular Templates</a>
+            </figcaption>
+        </figure>
+        <figure class="col-md-5" style="padding-top: 20px;">
+            <img src="img/One_Way_Data_Binding.png" alt="One way data binding">
+            <figcaption>vs. traditional one way binding</figcaption>
+        </figure>
+    </div>
 
     <h3>Promises</h3>
     <figure>
@@ -101,6 +109,10 @@
     </figure>
     <a href="http://embed.plnkr.co/xW3GvSlsf4sE4YtNOLIG/preview" target="_blank">Plunker demo</a>
     <iframe src="iframe-promises.html" width="100%" height="100px"></iframe>
+    <div>
+        <pre>promiseFactory.getPromise(data).then(function() {<br />    _this.promiseModel = data;<br />});
+        </pre>
+    </div>
 
     <hr/>
 
@@ -108,7 +120,7 @@
     <ol>
         <li><a href="https://github.com/angular/angular-seed" target="_blank">clone AngularJS seed project</a></li>
         <li>build with nmp, bower, grunt</li>
-        <li>add new </li>
+        <li>add new</li>
     </ol>
 </div>
 <script>
