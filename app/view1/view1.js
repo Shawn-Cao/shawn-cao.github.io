@@ -12,29 +12,23 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
 
     .controller('View1Ctrl', function($http, $scope, eventService) {
         var _this = this;
+        //init data objects - local
         this.events = [];
         this.userName = '';
         this.newEvent = {
             time: new Date()
         };
-        this.newEventTimePicker = {
-            dateOptions: {
-                formatYear: 'yy',
-                startingDay: 1
-            },
-            opened: false
-        };
-        eventService.showAllEvents().then( function (events) {
-            debugger;
-            _this.events = events;
-        });
         this.accordion = {
             isFirstOpen: true,
             isFirstDisabled: false
         };
         this.filterEvents = {};
-        //$scope.$watch(this.events);
-
+        //init data objects - remote
+        eventService.showAllEvents().then( function (events) {
+            debugger;
+            _this.events = events;
+        });
+        //init APIs
         this.registerEvent = function() {
             eventService.registerNewEvent(this.newEvent)
                 .then(function(createdEvent) {
