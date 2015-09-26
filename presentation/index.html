@@ -14,6 +14,8 @@
     <h1>Angular Introduction <img src="img/AngularJS-large.png" alt="angular banner" height="70px"></h1>
     <a href="../app/index.html">application link</a>
 
+    <hr/>
+
     <h2>Angular Primer</h2>
 
     <p>1. Introduction, 2. Angular Concepts and Usages, 3. Hands-on</p>
@@ -36,23 +38,30 @@
     </ul>
     <hr/>
     <h3>What is AngularJS</h3>
+
     <p>A Data-Driven JavaScript <a href="#framework" id="framework" data-toggle="tooltip" title="----Framework vs. Library----<br />Libraries - Write Less, Do More. e.g. jQuery, jUnit, Log4j.<br />
-        Frameworks - define and customize when necessary. e.g. AngularJS, Spring, Hibernate." data-html="true" data-placement="bottom">Framework</a> with:</p>
+        Frameworks - define and customize when necessary. e.g. AngularJS, Spring, Hibernate." data-html="true"
+                                   data-placement="bottom">Framework</a> with:</p>
     <ul>
-        <li>Event handling through <a href="#data-binding" id="data-binding" data-toggle="tooltip" title="Uni-direction data flow through $digest & $apply" data-placement="bottom">Data Binding</a></li>
+        <li>Event handling through <a href="#data-binding" id="data-binding" data-toggle="tooltip"
+                                      title="Uni-direction data flow through $digest & $apply" data-placement="bottom">Data
+            Binding</a></li>
         <li>UI templating (HTML tags)</li>
         <li>RESTful AJAX API (optional resouces maping through $resource plugin)</li>
         <li>URL mapping with state management</li>
-        <li>Testing support, location & i18n, security, accessibility<br />and more...</li>
-        <li>Modularized design support - good for <a href="http://venturebeat.com/2013/12/07/these-3-trends-will-drive-enterprise-software-development-in-2014/"
-                                                     target="_blank" data-toggle="tooltip" title="large team with diverse expertise, cost issue">
+        <li>Testing support, location & i18n, security, accessibility<br/>and more...</li>
+        <li>Modularized design support - good for <a
+                href="http://venturebeat.com/2013/12/07/these-3-trends-will-drive-enterprise-software-development-in-2014/"
+                target="_blank" data-toggle="tooltip" title="large team with diverse expertise, cost issue">
             Enterprise Environment</a>!
         </li>
     </ul>
 
     <h3>Why AngualrJS</h3>
     <ul>
-        <li>A general trend to move UI processing to <a href="#client-side" id="client-side" data-toggle="tooltip" title="server cost, data-driven, rich interaction" data-placement="bottom">Client Side</a></li>
+        <li>A general trend to move UI processing to <a href="#client-side" id="client-side" data-toggle="tooltip"
+                                                        title="server cost, data-driven, rich interaction"
+                                                        data-placement="bottom">Client Side</a></li>
         <li>HTML5 for cross-platform support</li>
         <li>Advances in JavaScript - ES6, JS engines</li>
     </ul>
@@ -67,22 +76,15 @@
     <h3>Declarative vs. Imperative</h3>
 
     <div class="row">
-        <span ng-app="inputApp">
-            Input: <input ng-model="data.model"> &nbsp; Display: {{data.model}}<br/>
-        </span>
-        <pre class="col-md-5">
-            &lt;input ng-model="data.model"&gt;
-            Display: {{data.model}}
-        </pre>
+        <div class="col-md-5">
+            <iframe src="iframe-angular.html" width="100%" height="60px"></iframe>
+            <pre>&lt;input ng-model="model"&gt;<br />Display: {{model}}</pre>
+        </div>
         <div class="col-md-1">vs.</div>
-        <pre class="col-md-6">
-            Input <input id="model">Display: <span id="display"></span><br/>
-            &lt;input id="model"&gt;
-            Display: &lt;span id="display"&gt;&lt;/span&gt;<br/>
-            jquery: $( "#model" ).change(function(event) {
-            &nbsp; &nbsp; $("#display").text($(this).val());
-            });
-        </pre>
+        <div class="col-md-6">
+            <div style="border:1px solid grey; height: 60px; padding: 10px;">Input <input id="model">Display: <span id="display"></span></div>
+            <pre>&lt;input id="model"&gt;<br />Display: &lt;span id="display"&gt;&lt;/span&gt;<br/>jquery code: $( "#model" ).keyup(function(event) {<br />&nbsp; &nbsp; $("#display").text($(this).val());<br/>});</pre>
+        </div>
     </div>
     <h3>Data Binding</h3>
     <figure>
@@ -97,11 +99,21 @@
         <figcaption><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">JavaScript
             (ES6) Promise API</a></figcaption>
     </figure>
+    <a href="http://embed.plnkr.co/xW3GvSlsf4sE4YtNOLIG/preview" target="_blank">Plunker demo</a>
+    <iframe src="iframe-promises.html" width="100%" height="100px"></iframe>
 
+    <hr/>
+
+    <h2>Live Demo</h2>
+    <ol>
+        <li><a href="https://github.com/angular/angular-seed" target="_blank">clone AngularJS seed project</a></li>
+        <li>build with nmp, bower, grunt</li>
+        <li>add new </li>
+    </ol>
 </div>
 <script>
-    $(document).ready(function() {
-        $("#model").change(function(event) {
+    $(document).ready(function () {
+        $("#model").keyup(function (event) {
             $("#display").text($(this).val());
         });
         $(function () {

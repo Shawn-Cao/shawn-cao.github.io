@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe angular for promises</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+</head>
+<body>
+<div>
+    <p ng-app="promiseApp" ng-controller="PromiseCtrl as data">
+        Input: <input type="text" ng-model="data.model" ng-change="data.displayWithPromise(data.model)" size="8"/><br />
+        Direct display: {{data.model}}<br />
+        Display through promise: {{data.promiseModel}}
+    </p>
+</div>
+<script src="js/promiseDemo.js"></script>
+</body>
+</html>
