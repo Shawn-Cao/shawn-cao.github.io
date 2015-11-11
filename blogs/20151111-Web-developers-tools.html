@@ -1,13 +1,17 @@
 <div>
 	<h3>Web developer's workshop - AngularJS, NodeJS, MongoDB tools and develop/deployment tutorial</h3>
-	<ol>
-		<li>authentication mechanism has to be manually set for mongodb 3.0+ version:<br />
-			db.connection = mongojs(process.env.MONGOLAB_URI || MONGODB, ["users"], {authMechanism: 'ScramSHA1'});
-		</li>
-		<li>request JSON has to be manually convert to BSON format also:<br />
-			eg. object ID should be converted with mongojs.ObjectId('523209c4561c640000000001'). especially when updating with a dot notated criteria, update fails
-			<a href="https://docs.mongodb.org/manual/reference/method/db.collection.update/" target="_blank">silently</a>
-		</li>
-	</ol>
-	<p>The above two probably can be set at somewhere global but I assume MongoDB APIs will change</p>
+	<p>Development Tools</p>
+	<ul>
+		<li><a href="https://www.google.com/chrome/browser/desktop/" title="client-side view and debug">Google Chrome browser</a> - hit 'F12' or right-click and select 'Inspect element' to initiate Developers Tool</li>
+		<li><a href="https://nodejs.org/en/download/" title="node is the server and npm is to manage dependencies and install other tools">Node JS</a></li>
+		<li><a href="https://docs.mongodb.org/manual/installation/" title="JavaScript friendly database">MongoDB</a> - required if local database desired</li>
+		<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" title="version control">Git</a></li>
+		<li>Other tools will be installed with npm (come with node JS). Please - run 'node -v' and 'npm -v' in command line to verify installation. Also 'git --version' and 'mongo --version' if desired.</li>
+	</ul>
+	<p>Hosting Resources</p>
+	<ul>
+		<li><a href="https://pages.github.com/">GitHub Pages - free static pages hosting</a> - please follow the link to create a page under your GitHub account.</li>
+		<li><a href="https://www.heroku.com/">Heroku web hosting</a> - we will cover how to publish your web application on heroku.<br />But you are more than welcome to try it out first, just create a NodeJS app (and add MongoDB as an add-on)</li>
+	</ul>
+	<p>Learning Resources</p>
 </div>
