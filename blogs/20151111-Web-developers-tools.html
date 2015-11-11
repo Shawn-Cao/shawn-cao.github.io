@@ -1,0 +1,13 @@
+<div>
+	<h3>Web developer's workshop - AngularJS, NodeJS, MongoDB tools and develop/deployment tutorial</h3>
+	<ol>
+		<li>authentication mechanism has to be manually set for mongodb 3.0+ version:<br />
+			db.connection = mongojs(process.env.MONGOLAB_URI || MONGODB, ["users"], {authMechanism: 'ScramSHA1'});
+		</li>
+		<li>request JSON has to be manually convert to BSON format also:<br />
+			eg. object ID should be converted with mongojs.ObjectId('523209c4561c640000000001'). especially when updating with a dot notated criteria, update fails
+			<a href="https://docs.mongodb.org/manual/reference/method/db.collection.update/" target="_blank">silently</a>
+		</li>
+	</ol>
+	<p>The above two probably can be set at somewhere global but I assume MongoDB APIs will change</p>
+</div>
