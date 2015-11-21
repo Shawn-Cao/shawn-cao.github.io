@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Welcome to our event bulletin</h2>
+    <p>
+        <strong>Recent Events: </strong>
+        <input type="search" ng-model="filterEvents.title" placeholder="search by title..." aria-label="filter events" />
+    </p>
+    <accordion close-others="oneAtATime">
+        <accordion-group ng-repeat="event in registration.events | filter:filterEvents | orderBy:'-time' track by event._id" is-open="accordion.open">
+            <accordion-heading>
+                {{event.title}} on {{event.time | date:'yyyy-MM-dd HH:mm:ss Z'}}
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': accordion.open, 'glyphicon-chevron-right': !accordion.open}"></i>
+            </accordion-heading>
+            <p>
+                Time: {{event.time | date}}
+                <button ng-click="registration.joinEvent(event.id)" class="btn btn-default btn-sm pull-right">I'm in!</button>
+            </p>
+            <p>Details: {{event.details}}</p>
+            <p>Address: {{event.address}}</p>
+            <p>
+                Attendees:
+                <span ng-repeat="attendee in event.attendees">
+                    {{attendee.name}}
+                    <span ng-switch on="attendee.showedUp">
+                        <span ng-switch-when="true">showed up</span>
+                        <span ng-switch-when="false">missed</span>
+                        <span ng-switch-default><button ng-click="registration.showUp(attendee.id, event.id)">showing up</button></span>
+                    </span>
+                </span>
+            </p>
+        </accordion-group>
+    </accordion>
+
+    <div>
+        <p><strong>Propose A New Event</strong></p>
+        <form nonvalidate>
+            <label>Title: <input type="text" ng-model="registration.newEvent.title" /></label><br />
+            <label>Details: <input type="text" ng-model="registration.newEvent.details" /></label><br />
+            <label>Address: <input type="text" ng-model="registration.newEvent.address" /></label><br />
+            <label>Time: <input type="datetime-local" ng-model="registration.newEvent.time" /></label><br />
+            <input type="submit" ng-click="registration.registerEvent()" /><br />
+        </form>
+    </div>
+</div>
