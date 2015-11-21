@@ -8,7 +8,7 @@
 <h2>Blogs</h2>
 <ul>
     <li ng-repeat="post in posts">
-        <p><a href="/blogs/{{post}}">{{post}}</a></p>
+        <p><a href="/blog/posts/{{post}}">{{post}}</a></p>
         <div style="display:none" ng-include="'/blogs/' + post"></div>
     </li>
 </ul>
