@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute', 'myApp.service.event'])
+angular.module('angualr-fun', ['ngRoute', 'myApp.service.event'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/view1', {
