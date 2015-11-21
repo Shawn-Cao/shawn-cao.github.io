@@ -3,7 +3,7 @@
 angular.module('angualr-fun', ['ngRoute', 'myApp.service.event'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/view1', {
+        $routeProvider.when('/angular-fun', {
             templateUrl: 'angular-fun/view1.html',
             controller: 'View1Ctrl',
             controllerAs: 'registration'
