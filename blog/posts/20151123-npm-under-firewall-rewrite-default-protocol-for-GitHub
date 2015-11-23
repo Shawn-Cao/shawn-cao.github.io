@@ -1,7 +1,0 @@
-If you encountered this kind of problem when running npm install under a firewall:
-  'ECMDERR Failed to execute "git ls-remote --tags --heads git://github.com/jquery/jquery.git", exit code of #128 fatal: unable to connect to github.com: github.com[0: 192.30.252.130]: errno=No error'
-
-try override git default protocol with:
-  'git config --global url.https://github.com/.insteadOf git://github.com/'
-
-reference - http://stackoverflow.com/questions/1722807/git-convert-git-urls-to-http-urls
