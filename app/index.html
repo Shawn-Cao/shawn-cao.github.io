@@ -1,0 +1,49 @@
+<html lang="en" ng-app="myApp" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+<div>
+    <h1>Web Development Workshop - 2nd meeting</h1>
+    <h2>Dynamic Web Pages with Angular JS</h2>
+    <p>Agenda -  Nov. 21th (Saturday) 1-5PM @ Gwinnett County Library (<a href="https://www.google.com/maps/place/Gwinnett+County+Library/@34.0540261,-84.0566349,12z/data=!4m2!3m1!1s0x0000000000000000:0x9200982209ec30ba" title="Address on Google Map">361 Main St, Suwanee, GA 30024</a>)</p>
+    <ol>
+        <li>Static vs. Dynamic Pages - simple HTML + JavaScript demo</li>
+        <li>Adding client side dynamics with <a href="https://en.wikipedia.org/wiki/Ajax_(programming)" title="Asynchronous JavaScript and XML">AJAX</a> - Google Map demo</li>
+        <li><a href="http://localhost:8000/presentations/angularJS-concepts/" target="_blank">Angular JS concepts</a></li>
+        <li>Adding dynamic components to <a href="https://pages.github.com/">GitHub</a> hosted website with <a href="https://developer.github.com/v3/">GitHub API</a></li>
+        <li>The 'A' in <a href="http://mean.io/" title="MongoDB-ExpressJS-AngularJS-Node">MEAN stack</a></li>
+    </ol>
+</div>
+
+<div ng-view style="background-color: #FFFCCF; margin: 0 40px 0 20px"></div>
+
+<div>Backed by AngularJS & NodeJS</div>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="app.js"></script>
+<script src="angular-fun/fun.js"></script>
+<script src="view2/blog.js"></script>
+<script src="services/eventService.js"></script>
+<script src="services/remote/backend.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

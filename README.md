@@ -1,4 +1,5 @@
-use 'bundle exec jekyll serve --watch' to run
+to build/run on local:
+  bundle exec jekyll serve --watch
 
 # Pixyll
 
