@@ -1,3 +1,11 @@
+---
+layout:     post
+title:      NPM under firewall (most corporate environments)
+date:       2015-11-23 12:32:19
+summary:    Debugging firewall related issue - NPM with GIT.
+categories: software debugging
+---
+
 If you encountered this kind of problem when running npm install under a firewall: (to me it's my corporate firewall)
   'ECMDERR Failed to execute "git ls-remote --tags --heads git://github.com/jquery/jquery.git", exit code of #128 fatal: unable to connect to github.com: github.com[0: 192.30.252.130]: errno=No error'
 

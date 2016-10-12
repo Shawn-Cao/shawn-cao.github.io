@@ -1,3 +1,11 @@
+---
+layout:     post
+title:      Services as Data in Micro-Service Architecture
+date:       2016-06-20 12:32:19
+summary:    Bref discussion on service API design in micro-services architecture, and typical enterprise IT infrastructures.
+categories: software
+---
+
 This is a record of my attempt to treat services as data in heavily UI optimized frameworks like Grails and Angular. The purpose of this attempt is to leverage these frameworks' GORM capability to also reduce boiler code that deal with backend service calls. (Also I was tring to refactor some large chunks of imperative code that deals with calling a few different serivces in parallel and populate view layer data)
 
 Grails has constructs like Domain class work with GORM and database, which could connect to a RESTful backend through plugins like http://www.grails.org/plugin/gorm-rest-client. Similarly, client-side solutions like Angular, also has Resource and RestAngular plugins to provides the same feature.
