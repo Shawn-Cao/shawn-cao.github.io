@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Replace Bower with NPM + Build Scripts
-date:       2016-06-08 12:32:19
+date:       2016-06-08
 summary:    Why and how to replace bower with npm.
 categories: software
 ---
@@ -24,4 +24,4 @@ Note I'm sending flattened dependencies into 'build/platform/www/' folder in cas
 
 Relying on npm for the sole source of dependency management give clearer picture of the project in package.json plus one less dependency and possibly faster build time.
 
-##Pending Update: include npm as build tool. eg. [ES6](https://github.com/Shawn-Cao/es6-babel-project-setup)
+## Pending Update: include npm as build tool. eg. [ES6](https://github.com/Shawn-Cao/es6-babel-project-setup)

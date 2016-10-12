@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Grilled Tender Pork Rib
-date:       2015-07-23 12:32:18
+date:       2015-07-23
 summary:    Recipe for very tender ribs grilled at low temperature.
 categories: recipe
 ---

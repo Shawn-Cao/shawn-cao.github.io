@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      NPM under firewall (most corporate environments)
-date:       2015-11-23 12:32:19
+date:       2015-11-23
 summary:    Debugging firewall related issue - NPM with GIT.
 categories: software debugging
 ---
@@ -14,6 +14,6 @@ Try override git default protocol with:
 Note, you may need to unset the config var first by running:
   'git config --global --unset-all url.https'
 
-Reference:
+### Reference:
   1. http://stackoverflow.com/questions/1722807/git-convert-git-urls-to-http-urls
   2. https://github.com/angular/angular-phonecat/issues/141

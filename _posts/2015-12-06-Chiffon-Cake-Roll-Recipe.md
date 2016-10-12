@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Chiffon Cake Roll
-date:       2015-12-06 12:32:18
+date:       2015-12-06
 summary:    Recipe for chiffon cake (roll) at family size.
 categories: recipe
 ---

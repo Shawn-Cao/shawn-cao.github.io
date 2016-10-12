@@ -1,3 +1,11 @@
+---
+layout:     post
+title:      AngularJS Happy Developing - ACIT Invited Talk
+date:       2015-11-21
+summary:    Presentation topic and preview page.
+categories: presentation
+---
+
 <div>
 	<h3>Web Developer's Workshop - <abbr href="#MEAN" title="MEAN stack">AngularJS, NodeJS, MongoDB</abbr> tools and develop/deployment tutorial</h3>
 	<h4>*** 2st meeting - Angular JS fun ***</h4>

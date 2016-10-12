@@ -1,3 +1,11 @@
+---
+layout:     post
+title:      Web Developers Tools Workshop - Part I. AngularJS Happy Developing - ACIT Invited Talk
+date:       2015-11-11
+summary:    Agenda and prerequisite.
+categories: presentation
+---
+
 <div>
 	<h3>Web Developer's Workshop - <abbr href="#MEAN" title="MEAN stack">AngularJS, NodeJS, MongoDB</abbr> tools and develop/deployment tutorial</h3>
 	<h4>***1st meeting - environment setup***</h4>
