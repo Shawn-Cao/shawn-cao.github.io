@@ -12,7 +12,7 @@ Of course I'm not suggesting to always just commit and push changes to master. W
 
 ## Why Master
 
-The branch master is so precious that it is the only provided branch whenever a repository is cloned. And the act of cloning indicates users' purpose is not to consume, which should resort to binary downloading from package management systems like NPM. Rather, they to either start development, or look at current code status. Either case it is the users' best benefit to defaut to the latest code. I don't think anyone enjoys to spend unnecessary time to figure out what's the 'development' branch, by potentially another unnecessary search on documentations...
+The branch master is so precious that it is the only provided branch whenever a repository is cloned. And the act of cloning indicates users' purpose is not to consume, which should resort to binary downloading from package management systems like NPM. Rather, they to either start development, or look at current code status. Either case it is the users' best benefit to default to the latest code. I don't think anyone enjoys to spend unnecessary time to figure out what's the 'development' branch, by potentially another unnecessary search on documentations...
 
 GIT is a source control tool, let it present the best source control experience by defauling current code status to master branch. If there's any secondary concerns like release management, use secondary GIT features like tags, or artifact control systems like NPM.
 
