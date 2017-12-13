@@ -2,29 +2,38 @@
 <html>
 <head>
     <title>AWS SDK for JavaScript - Sample Application</title>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+    <meta charset="utf-8">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.169.0.min.js"></script>
 </head>
+
 <body>
     <input type="file" id="file-chooser" />
     <button id="upload-button" style="display:none">Upload to S3</button>
-    <div id="results"></div>
+    <hr />
+    <div>Your bucket objects:</div>
+    <div id="results">Please login to see the list of files</div>
+    <hr />
+    <div>file content preview</div>
+    <div id="file-content"></div>
+
     <div id="fb-root"></div>
     <script type="text/javascript">
-        var appId = '1947037382203737';
-        var roleArn = 'arn:aws:iam::113688755533:role/facebook-app';
-        var bucketName = 'js-sdk-eval';
-        AWS.config.region = 'us-west-2';
-        
+        var appId = '149302952278784';
+        var roleArn = 'arn:aws:iam::113688755533:role/facebook-auth-per-object-user';
+        var bucketName = 'cognito-demo-shawn';
+        AWS.config.region = 'us-east-1';
+
         var fbUserId;
         var bucket = new AWS.S3({
             params: {
                 Bucket: bucketName
             }
         });
+
         var fileChooser = document.getElementById('file-chooser');
         var button = document.getElementById('upload-button');
         var results = document.getElementById('results');
-        
+
         button.addEventListener('click', function () {
             var file = fileChooser.files[0];
             if (file) {
@@ -35,8 +44,9 @@
                     Key: objKey,
                     ContentType: file.type,
                     Body: file,
-                    ACL: 'public-read'
+                    ACL: 'authenticated-read'
                 };
+
                 bucket.putObject(params, function (err, data) {
                     if (err) {
                         results.innerHTML = 'ERROR: ' + err;
@@ -48,7 +58,7 @@
                 results.innerHTML = 'Nothing to upload.';
             }
         }, false);
-        
+
         function listObjs() {
             var prefix = 'facebook-' + fbUserId;
             bucket.listObjects({
@@ -59,23 +69,31 @@
                 } else {
                     var objKeys = "";
                     data.Contents.forEach(function (obj) {
-                        objKeys += obj.Key + "<br>";
+                        objKeys += `<a href="${obj.Key}" target="_blank">${obj.Key}</a> - <button onclick="getObject('${obj.Key}')">JS getObject</button><br>`;
                     });
                     results.innerHTML = objKeys;
                 }
             });
         }
 
+        function getObject(objectKey) {
+            bucket.getObject({ Key: objectKey}, (error, data) =>
+              document.getElementById('file-content').innerHTML = data.Body.toString());
+        }
+
         /*!
          * Login to your application using Facebook.
          * Uses the Facebook SDK for JavaScript available here:
-         * https://developers.facebook.com/docs/javascript/gettingstarted/
+         * https://developers.facebook.com/docs/javascript/quickstart/
          */
+
         window.fbAsyncInit = function () {
             FB.init({
                 appId: appId
             });
+
             FB.login(function (response) {
+                // authenticate AWS on facebook login success
                 bucket.config.credentials = new AWS.WebIdentityCredentials({
                     ProviderId: 'graph.facebook.com',
                     RoleArn: roleArn,
@@ -83,8 +101,10 @@
                 });
                 fbUserId = response.authResponse.userID;
                 button.style.display = 'block';
-            });
+                listObjs();
+            })
         };
+
          // Load the Facebook SDK asynchronously
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -93,7 +113,7 @@
             }
             js = d.createElement(s);
             js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js";
+            js.src = "https://connect.facebook.net/en_US/all.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
