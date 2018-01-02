@@ -4,7 +4,7 @@ email:       me@shawn-cao.com
 author:      Xiangke(Shawn) Cao
 description: "Personal website and blog."
 baseurl:     ""
-url:         "http://www.shawn-cao.com"
+url:         "http://shawn-cao.github.io/"
 date_format: "%b %-d, %Y"
 
 # Google services

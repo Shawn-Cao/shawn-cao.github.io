@@ -3,7 +3,7 @@ layout:     post
 title:      Redux Middlewares on Functional Reactive Programming
 date:       2017-12-12
 summary:    A sample redux middleware for functional reactive programming with React + Redux.
-categories: software, functional programming, reactive programming
+categories: software functional-programming
 ---
 
 ### TL;DR: This is a introduction to my [redux-pure-fetch](https://github.com/Shawn-Cao/redux-pure-fetch) package, an redux middleware extracted from my proposal to refactor our supposedly functional enterprise apps. By moving impure part of the functions into a redux middleware, asynchronous functions stay pure and application states become clear.

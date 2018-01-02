@@ -1,5 +1,4 @@
-————OAuth2————
-
+-------OAuth2-------
 
 What: Authorization provider
 
@@ -11,7 +10,8 @@ Bundled solution: OpenID Connect
 
 Cloud solution: AWS Cognito
 
-———Cognito————
+-------Cognito-------
+
 AWS cognito ads:
 https://www.youtube.com/watch?v=abTy-Yyo6lI
 
@@ -19,22 +19,26 @@ Creating cognito user pool + federation agency: https://console.aws.amazon.com/c
 
 Developer guide: http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-started-browser.html
 
-———Demo——
+---------Demo---------
 Protected S3 resource will be accessible after authentication + authorization
 
 http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-started-browser.html#getting-started-browser-create-bucket
 
 Explain steps: 1. Only give index.html public access. 2. Access other files has to go through JavaScript. (Click file link will fail) 3.Demo list other users object will fail
-——vars——
+
+----------vars------------
 S3 bucket name: cognito-demo-shawn
   bucket region: us-east-1
-    bucket URL: http://cognito-demo-shawn.s3-website-us-east-1.amazonaws.com/
+    bucket URL: https://s3.amazonaws.com/cognito-demo-shawn/index.html
+    # note: don't use non-https URLs (eg. S3 website host URL http://cognito-demo-shawn.s3-website-us-east-1.amazonaws.com/)
 Facebook app ID: 149302952278784
 IAM policy name: facebook-auth-per-object
   IAM role name: facebook-auth-per-object-user
     role ARN: arn:aws:iam::113688755533:role/facebook-auth-per-object-user
 
-Safety explaind:
+
+## Safety explained:
+
 Facebook loads in separate browser tab, credential is safe
-Popup window Oauth is only safe if user verifies the URL. Browser treat cookies from different domain as totally separated context scope
+Popup window Oauth2 is only safe if user verifies the URL. Browser treat cookies from different domain as totally separated context scope
 Should use https to access index.html

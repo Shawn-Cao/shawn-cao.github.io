@@ -3,7 +3,7 @@ layout:     post
 title:      12-factor single page app (SPA)
 date:       2017-07-05
 summary:    Modern 12-factor apps applied to SPAs.
-categories: software, micro-service
+categories: software micro-service
 ---
 
 12-factor apps requires apps to load configuration from environment, which is often omitted when developing Single Page Apps (SPA)
