@@ -5,6 +5,7 @@ author:      Xiangke(Shawn) Cao
 description: "Personal website and blog."
 baseurl:     ""
 url:         "http://shawn-cao.github.io/"
+github:      "https://github.com/Shawn-Cao"
 date_format: "%b %-d, %Y"
 
 # Google services
