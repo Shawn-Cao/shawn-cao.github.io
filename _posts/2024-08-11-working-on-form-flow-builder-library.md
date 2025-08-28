@@ -2,9 +2,11 @@
 layout:     post
 title:      Personal project - form flow builder
 date:       2024-08-11
-summary:    OAuth 2 and AWS Cognito service, and the future for static web apps.
+summary:    Something big, or just another form library, or pull-a-part repo?
 categories: software
 ---
+
+#### Update: I restarted working on this project. It has potentials in an AI driven development scenario. Now live preview at https://shawn-cao.github.io/form-flow-builder/
 
 ### Started working on [this project](https://github.com/Shawn-Cao/form-flow-builder). Trying to generalize something useful out of my work and hackweek projects. I initially thought it's so useful to general projects but soon found it overwheming to accomondate so many features.
 
