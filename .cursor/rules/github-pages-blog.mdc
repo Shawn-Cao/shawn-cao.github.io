@@ -1,0 +1,51 @@
+---
+description: Shawn Cao personal blog on GitHub Pages (Jekyll / Pixyll)
+alwaysApply: true
+---
+
+# shawn-cao.github.io
+
+Personal blog and portfolio hosted on **GitHub Pages** (`Shawn-Cao/shawn-cao.github.io`).
+
+## Workflow
+
+- **No local builds.** The owner does not run Jekyll locally; changes are validated by **pushing to GitHub and checking production** at https://shawn-cao.github.io/
+- Do not suggest `bundle install`, `jekyll serve`, or Ruby setup unless the user explicitly asks for local development.
+- After content or config edits, remind them to push and verify on the live site if relevant.
+
+## Stack
+
+- **Jekyll 3.10** via GitHub’s built-in Pages builder (`github-pages` gem **~232**, Ruby **3.3.4** on GitHub).
+- Production dependency versions: https://pages.github.com/versions.json
+- **Pixyll** theme is **vendored** in-repo (`_layouts/`, `_includes/`, `_sass/`), not `remote_theme`.
+- `Gemfile` only declares `github-pages`. `Gemfile.lock` is gitignored.
+
+## Key paths
+
+| Path | Purpose |
+|------|---------|
+| `_posts/` | Blog posts (`YYYY-MM-DD-slug.md`) |
+| `_drafts/` | Unpublished drafts |
+| `_config.yml` | Site config, plugins, Disqus |
+| `_includes/navigation.html` | Header nav links |
+| `_layouts/`, `_includes/`, `_sass/` | Theme |
+
+## Config notes
+
+- `markdown: kramdown`, `permalink: pretty`, `paginate: 4`
+- Plugins: `jekyll-paginate`, `jekyll-sitemap` (use `plugins:` in `_config.yml`; `gems:` is deprecated but still works on GHP)
+- Disqus: `disqus_shortname` in `_config.yml`, embed in `_layouts/post.html`
+
+## Out of scope unless asked
+
+- **`app/`**, **`presentations/`**, **`movie/`** — legacy demos/static assets, not part of the Jekyll blog build.
+- **Jekyll 4** or **GitHub Actions** migration — only if the user requests leaving branch-built Pages.
+- Large refactors of legacy Angular/Bower code under `app/`.
+
+## Related projects
+
+- **`/player-chooser/`** — linked from `_includes/navigation.html` and blog posts. **Not in this repo.** Source and deploy: [Shawn-Cao/player-chooser](https://github.com/Shawn-Cao/player-chooser) (separate GitHub Pages site at https://shawn-cao.github.io/player-chooser/). Edit that repo for app changes; only change nav/links here.
+
+## Gotchas
+
+- Do not create git commits unless the user asks.
