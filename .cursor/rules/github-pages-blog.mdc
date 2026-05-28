@@ -26,14 +26,15 @@ Personal blog and portfolio hosted on **GitHub Pages** (`Shawn-Cao/shawn-cao.git
 |------|---------|
 | `_posts/` | Blog posts (`YYYY-MM-DD-slug.md`) |
 | `_drafts/` | Unpublished drafts |
-| `_config.yml` | Site config, plugins, Disqus |
-| `_includes/navigation.html` | Header nav links |
+| `_config.yml` | Site config, `nav_apps`, plugins, Disqus |
+| `_includes/navigation.html` | Header nav (reads `nav_apps` + About + GitHub) |
 | `_layouts/`, `_includes/`, `_sass/` | Theme |
 
 ## Config notes
 
 - `markdown: kramdown`, `permalink: pretty`, `paginate: 4`
-- Plugins: `jekyll-paginate`, `jekyll-sitemap` (use `plugins:` in `_config.yml`; `gems:` is deprecated but still works on GHP)
+- Plugins: `jekyll-paginate`, `jekyll-sitemap` in `plugins:` in `_config.yml`
+- **Header nav (Option A):** title **Shawn Cao** → home; nav groups **Apps** (`nav_apps` in `_config.yml`) · **About** · **GitHub**. Add free apps via `nav_apps` (name, url, description, optional `free: true` for badge). App code may live in other repos—only links here.
 - Disqus: `disqus_shortname` in `_config.yml`, embed in `_layouts/post.html`
 
 ## Out of scope unless asked
@@ -44,7 +45,7 @@ Personal blog and portfolio hosted on **GitHub Pages** (`Shawn-Cao/shawn-cao.git
 
 ## Related projects
 
-- **`/player-chooser/`** — linked from `_includes/navigation.html` and blog posts. **Not in this repo.** Source and deploy: [Shawn-Cao/player-chooser](https://github.com/Shawn-Cao/player-chooser) (separate GitHub Pages site at https://shawn-cao.github.io/player-chooser/). Edit that repo for app changes; only change nav/links here.
+- **Player Chooser** — first entry in `nav_apps`; source repo [Shawn-Cao/player-chooser](https://github.com/Shawn-Cao/player-chooser), served at `/player-chooser/`. Edit that repo for app changes; add/update links in `_config.yml` `nav_apps`.
 
 ## Gotchas
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Shawn
+title: About
 permalink: /about/
 tags: about
 ---

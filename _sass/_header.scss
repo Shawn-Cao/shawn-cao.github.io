@@ -18,8 +18,47 @@
   margin-top: $space-2;
 }
 
+.site-nav-inner {
+  line-height: 1.5;
+}
+
+.nav-group {
+  display: inline;
+  white-space: nowrap;
+}
+
+.nav-group + .nav-group::before {
+  content: '\00b7';
+  margin: 0 0.45em;
+  color: #bbb;
+  font-weight: 400;
+}
+
+.nav-group a + a {
+  margin-left: 0.75em;
+}
+
 .site-header nav a {
   color: #666;
+}
+
+.site-header nav a.nav-app {
+  color: #555;
+}
+
+.nav-badge {
+  display: inline-block;
+  margin-left: 0.25em;
+  padding: 0.05em 0.35em;
+  font-size: 0.65em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  vertical-align: 0.15em;
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  line-height: 1.3;
 }
 
 .site-header nav a:hover,
@@ -30,8 +69,10 @@
   border-bottom: 2px solid #444;
 }
 
-.site-nav a + a {
-  margin-left: 1em;
+.site-header nav a.nav-app:hover .nav-badge,
+.site-header nav a.nav-app:focus .nav-badge,
+.site-header nav a.nav-app:active .nav-badge {
+  border-bottom: none;
 }
 
 .site-header a:hover,
@@ -47,4 +88,22 @@
 
 .site-header .site-nav {
   text-align: center;
+}
+
+@media screen and (max-width: 31.99em) {
+  .site-header nav a {
+    font-size: 0.9rem;
+  }
+
+  .site-header .site-title {
+    font-size: $h3;
+  }
+
+  .nav-group + .nav-group::before {
+    margin: 0 0.3em;
+  }
+
+  .nav-group a + a {
+    margin-left: 0.5em;
+  }
 }

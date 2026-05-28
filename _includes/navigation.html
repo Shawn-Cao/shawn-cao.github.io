@@ -1,7 +1,26 @@
-<a href="/player-chooser/" title="completely free &amp; installable app with no ads">Player Chooser</a>
-<a href="{{ site.github }}">My GitHub repos</a>
-{% for page in site.pages %}
-    {% if page.tags contains "about" %}
-        <a href="{{ page.url }}">{{ page.title }}</a>
-    {% endif %}
-{% endfor %}
+<div class="site-nav-inner">
+  {% if site.nav_apps and site.nav_apps.size > 0 %}
+  <span class="nav-group nav-group-apps">
+    {% for app in site.nav_apps %}
+      {% if app.url contains '://' %}
+        {% assign app_href = app.url %}
+      {% else %}
+        {% assign app_href = app.url | relative_url %}
+      {% endif %}
+      <a href="{{ app_href }}" class="nav-app"{% if app.description %} title="{{ app.description | xml_escape }}"{% endif %}>{{ app.name }}{% if app.free %}<span class="nav-badge">Free</span>{% endif %}</a>
+    {% endfor %}
+  </span>
+  {% endif %}
+  <span class="nav-group nav-group-site">
+    {% for page in site.pages %}
+      {% if page.tags contains "about" %}
+        <a href="{{ page.url | relative_url }}">About</a>
+      {% endif %}
+    {% endfor %}
+  </span>
+  {% if site.github %}
+  <span class="nav-group nav-group-external">
+    <a href="{{ site.github }}">GitHub</a>
+  </span>
+  {% endif %}
+</div>

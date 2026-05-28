@@ -1,12 +1,23 @@
 # Site settings
-title:       Shawn-Cao's Web Home
+title:       Shawn Cao
 email:       me@shawn-cao.com
 author:      Xiangke(Shawn) Cao
 description: "Personal website and blog."
 baseurl:     ""
-url:         "http://shawn-cao.github.io/"
+url:         "https://shawn-cao.github.io/"
 github:      "https://github.com/Shawn-Cao"
 date_format: "%b %-d, %Y"
+
+# Header nav — free apps/tools (code may live in other repos; link only)
+nav_apps:
+  - name: Player Chooser
+    url: /player-chooser/
+    description: Pick who goes first — each player touches the screen
+    free: true
+  # - name: Another App
+  #   url: https://example.com/my-app/
+  #   description: One-line summary for hover tooltip
+  #   free: true
 
 # Google services
 google_verification:
@@ -105,13 +116,11 @@ text:
 
 # Build settings
 markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
 paginate:     4
 sass:
   compressed: true
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
 # https://github.com/jekyll/jekyll/issues/2938
