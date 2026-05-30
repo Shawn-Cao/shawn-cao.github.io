@@ -46,6 +46,7 @@ Personal blog and portfolio hosted on **GitHub Pages** (`Shawn-Cao/shawn-cao.git
 ## Related projects
 
 - **Player Chooser** — first entry in `nav_apps`; source repo [Shawn-Cao/player-chooser](https://github.com/Shawn-Cao/player-chooser), served at `/player-chooser/`. Edit that repo for app changes; add/update links in `_config.yml` `nav_apps`.
+- **Tarot Draw** — source repo [Shawn-Cao/tarot-draw-light](https://github.com/Shawn-Cao/tarot-draw-light), served at `/tarot-draw-light/`. Embed via `/tarot-draw-light/embed.html`.
 
 ## Gotchas
 

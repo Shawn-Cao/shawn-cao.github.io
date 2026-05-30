@@ -14,6 +14,10 @@ nav_apps:
     url: /player-chooser/
     description: Pick who goes first — each player touches the screen
     free: true
+  - name: Tarot Draw
+    url: /tarot-draw-light/
+    description: Draw tarot cards for daily insight — works offline
+    free: true
   # - name: Another App
   #   url: https://example.com/my-app/
   #   description: One-line summary for hover tooltip
